@@ -1,0 +1,63 @@
+$blue: #00e1ff;
+$white:#fff;
+$black:#000000;
+$basecolor:$blue;
+@mixin trantsiion {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin corners($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    -khtml-border-radius: $radius;
+}
+
+body {
+    background: linear-gradient( to right, #00AAFF, #00ffc6);
+    ;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+.wraper {
+    width: 800px;
+    margin: 30px auto;
+    color: $white;
+    text-align: center;
+}
+
+h1,
+h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 2.6em;
+    text-transform: uppercase;
+}
+
+#secounds,
+#tens {
+    font-size: 2em;
+}
+
+button {
+    @include corners(5px);
+    background: $basecolor;
+    color: $white;
+    border: solid 1px $white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 180px;
+    padding: 18px 10px;
+    margin: 10px;
+    outline: none;
+    &:hover {
+        @include trantsiion();
+        color: $basecolor;
+        border: solid 1px $black;
+        background: $white;
+    }
+}
